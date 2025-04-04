@@ -6,17 +6,17 @@
 function calculateRentalCost(days) {
   const pricePerDay = 40;
   const basePrice = days * pricePerDay;
-  const longTerm = 7;
-  const longTermDiscount = 50;
-  const mediumTerm = 3;
-  const mediumTermDiscount = 20;
+  const longTermRentalDaysThreshold = 7;
+  const longTermRentalDiscountRate = 50;
+  const mediumTermRentalDaysThreshold = 3;
+  const mediumTermRentalDiscountRate = 20;
 
-  if (days >= longTerm) {
-    return basePrice - longTermDiscount;
+  if (days >= longTermRentalDaysThreshold) {
+    return basePrice - longTermRentalDiscountRate;
   }
 
-  if (days >= mediumTerm) {
-    return basePrice - mediumTermDiscount;
+  if (days >= mediumTermRentalDaysThreshold) {
+    return basePrice - mediumTermRentalDiscountRate;
   }
 
   return basePrice;
